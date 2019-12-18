@@ -14,6 +14,7 @@ axios.get(url)
   })
 
 
+  
 
   const getNodes = html => {
     const data = [], // Boş bir array oluşturuyoruz
@@ -34,14 +35,22 @@ var ws = fs.createWriteStream('my.csv');
 
 
 // Dizi tipindeki dataları csv ye çevirme
-csv.
+for(var i=1;i<=data.length;i++)
+{
+  csv.
     write([
-   
-       data
+
+      
+     data[i]
+
          
     ],{headers:true})
     
     .pipe(ws);
 
+}
 
+
+
+    
   }
