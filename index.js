@@ -4,7 +4,7 @@ const axios = require('axios'),
       url = 'https://www.trendyol.com/sony/wh-ch510-siyah-kablosuz-bluetooh-kulak-ustu-kulaklik-p-31882281/yorumlar?boutiqueId=381444&merchantId=104683';
 
 
-
+//Error Bilgisi
 axios.get(url)
   .then (response => {
     getNodes(response.data);
