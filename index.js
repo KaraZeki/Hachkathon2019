@@ -32,6 +32,8 @@ axios.get(url)
  var  csv = require('fast-csv');
 var ws = fs.createWriteStream('my.csv');
 
+
+// Dizi tipindeki dataları csv ye çevirme
 csv.
     write([
    
