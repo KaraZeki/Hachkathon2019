@@ -2,6 +2,7 @@ const axios = require('axios'),
       jsdom = require('jsdom'),
       { JSDOM }=  jsdom,
       url = 'https://www.trendyol.com/sony/wh-ch510-siyah-kablosuz-bluetooh-kulak-ustu-kulaklik-p-31882281/yorumlar?boutiqueId=381444&merchantId=104683';
+      const utf8 = require('utf8');
 
 
 //Error Bilgisi
@@ -24,7 +25,7 @@ axios.get(url)
         yorum: item.innerHTML
       })
     });
-    //console.log(data); // Arrayin son halini yazdırıyorum. Burada elinize gelen data ile ne yapacağınız size kalmış :)
+    console.log(data); // Arrayin son halini yazdırıyorum. Burada elinize gelen data ile ne yapacağınız size kalmış :)
 
     //const csv = convertArrayToCSV(data,Option);
     
@@ -34,14 +35,19 @@ var ws = fs.createWriteStream('my.csv');
 
 
 // Dizi tipindeki dataları csv ye çevirme
-csv.
+
+
+for(var i=1;i<=data.length;i++)
+{
+  csv.
     write([
-   
-       data
+
+      
+     data[i]
+
          
     ],{headers:true})
     
     .pipe(ws);
 
-
-  }
+}}
