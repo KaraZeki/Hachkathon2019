@@ -1,7 +1,7 @@
 const axios = require('axios'),
       jsdom = require('jsdom'),
       { JSDOM }=  jsdom,
-      url = 'https://www.trendyol.com/sony/wh-ch510-siyah-kablosuz-bluetooh-kulak-ustu-kulaklik-p-31882281/yorumlar?boutiqueId=381444&merchantId=104683';
+      url = 'https://www.trendyol.com/xiaomi/redmi-note-8-64gb-beyaz-xiaomi-turkiye-garantili-cep-telefonu-p-31861680/yorumlar?boutiqueId=381444&merchantId=107304';
 
 
 //Error Bilgisi
@@ -31,16 +31,16 @@ axios.get(url)
     
  var fs =require('fs');
  var  csv = require('fast-csv');
-var ws = fs.createWriteStream('my.csv');
+var ws = fs.createWriteStream('yorum.csv');
 
 
 // Dizi tipindeki dataları csv ye çevirme
-for(var i=1;i<=data.length;i++)
+for(var i=1;i<=200;i++)
 {
   csv.
     write([
 
-      
+
      data[i]
 
          
