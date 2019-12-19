@@ -1,8 +1,7 @@
 const axios = require('axios'),
       jsdom = require('jsdom'),
       { JSDOM }=  jsdom,
-      url = 'https://www.trendyol.com/sony/wh-ch510-siyah-kablosuz-bluetooh-kulak-ustu-kulaklik-p-31882281/yorumlar?boutiqueId=381444&merchantId=104683';
-      const utf8 = require('utf8');
+      url = 'https://www.hepsiburada.com/xiaomi-mi-a3-64-gb-xiaomi-turkiye-garantili-p-HBV00000MK46W-yorumlari';
 
 
 //Error Bilgisi
@@ -15,11 +14,12 @@ axios.get(url)
   })
 
 
+  
 
   const getNodes = html => {
-    const data = [], // Boş bir array oluşturuyoruz
+    const data = [200], // Boş bir array oluşturuyoruz
     dom = new JSDOM(html), // Yeni bir JSDOM instanceı alıyoruz
-    news = dom.window.document.querySelectorAll('.rnr-com-tx, p'); // dom'dan gelen nodelar arasında gezerek o modülün içerisindeki a etiketlerini çekiyorum.
+    news = dom.window.document.querySelectorAll('.review-text ,p'); // dom'dan gelen nodelar arasında gezerek o modülün içerisindeki a etiketlerini çekiyorum.
     news.forEach(item => { // daha sonra bu seçtiğim öğelerde dönüyorum
       data.push({ // yukarıdaki boş arraye her elemanın title ve href özelliklerini atıyorum
         yorum: item.innerHTML
@@ -31,18 +31,17 @@ axios.get(url)
     
  var fs =require('fs');
  var  csv = require('fast-csv');
-var ws = fs.createWriteStream('my.csv');
+var ws = fs.createWriteStream('yorum.csv');
 
 
 // Dizi tipindeki dataları csv ye çevirme
-
-
-for(var i=1;i<=data.length;i++)
+/*
+for(var i=1;i<=200;i++)
 {
   csv.
     write([
 
-      
+
      data[i]
 
          
@@ -50,4 +49,9 @@ for(var i=1;i<=data.length;i++)
     
     .pipe(ws);
 
-}}
+}
+
+*/
+
+  }
+  
