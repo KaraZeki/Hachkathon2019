@@ -1,7 +1,7 @@
 const axios = require('axios'),
       jsdom = require('jsdom'),
       { JSDOM }=  jsdom,
-      url = 'https://www.trendyol.com/xiaomi/redmi-note-8-64gb-mavi-xiaomi-turkiye-garantili-cep-telefonu-p-31861679/yorumlar?boutiqueId=381444&merchantId=109844'
+      url = 'https://www.trendyol.com/xiaomi/xiaomi-redmi-note-6-pro-64-gb-siyah-xiaomi-turkiye-garantili-p-4256910/yorumlar?boutiqueId=377544&merchantId=107708'
 
 
 //Error Bilgisi
@@ -25,13 +25,13 @@ axios.get(url)
         yorum: item.innerHTML
       })
     });
-    console.log(data); // Arrayin son halini yazdırıyorum. Burada elinize gelen data ile ne yapacağınız size kalmış :)
+    //console.log(data); // Arrayin son halini yazdırıyorum. Burada elinize gelen data ile ne yapacağınız size kalmış :)
 
     //const csv = convertArrayToCSV(data,Option);
     
  var fs =require('fs');
  var  csv = require('fast-csv');
-var ws = fs.createWriteStream('yorum.csv');
+var ws = fs.createWriteStream('yorum3.csv');
 
 
 // Dizi tipindeki dataları csv ye çevirme
@@ -50,8 +50,6 @@ for(var i=1;i<=200;i++)
     .pipe(ws);
 
 }
-
-
 
   }
   
